@@ -22,4 +22,8 @@ public HelloWorldClass exampleMethod0(@RequestParam(name="param1",defaultValue="
 public HelloWorldClass exampleMethod1(@RequestBody HelloWorldClass body) {
 	return body;
 }
+@PostMapping("/hello")
+public HelloWorldClass exampleMethod1(@RequestBody HelloWorldClass body) {
+return body;
+}
 }
