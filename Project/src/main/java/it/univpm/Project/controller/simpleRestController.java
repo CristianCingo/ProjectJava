@@ -12,6 +12,6 @@ import it.univpm.Project.model.HelloWorldClass;
 public class simpleRestController {
 @GetMapping("/hello")
 public HelloWorldClass exampleMethod(@RequestParam(name="param1",defaultValue="World") String param1) {
-return new HelloWorldClass("Cristian","Cingolani");
+return new HelloWorldClass("Cri","Cingolani");
 }
 }
