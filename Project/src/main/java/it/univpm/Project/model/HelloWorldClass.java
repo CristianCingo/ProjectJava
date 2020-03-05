@@ -3,6 +3,7 @@ package it.univpm.Project.model;
 public class HelloWorldClass {
 	private String name;
 	private String surname;
+	
 	public HelloWorldClass(String name, String surname)
 	{
 		this.name=name;
