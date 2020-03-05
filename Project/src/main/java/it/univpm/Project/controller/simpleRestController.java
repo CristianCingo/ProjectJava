@@ -17,7 +17,7 @@ public HelloWorldClass exampleMethod(@RequestParam(name="param1",defaultValue="W
 return new HelloWorldClass("Cristian","Cingolani");
 }
 @PostMapping("/hello")
-public HelloWorldClass exampleMethod1(@RequestBody String body) {
-return new HelloWorldClass("Christian","Ascani");
+public HelloWorldClass exampleMethod1(@RequestBody HelloWorldClass body) {
+return body;
 }
 }
