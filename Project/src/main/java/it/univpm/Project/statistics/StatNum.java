@@ -12,7 +12,7 @@ import it.univpm.Project.dataset.Funding;
 public class StatNum extends StatBasic{
 
 	private double sum, avg, min, max, devstd, count;
-	private double arrStat[6];
+	private double arrStat[] = new double[6];
 	public StatNum(String param, ArrayList<Funding> af) throws NoSuchMethodException, SecurityException
 	{
 		super(param, af);
@@ -34,7 +34,6 @@ public class StatNum extends StatBasic{
 				
 			return (sum);
 		}
-	//ciao
 	
 	private double avg () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
@@ -90,5 +89,16 @@ public class StatNum extends StatBasic{
 	 return af.size();
 	}
 	
+	
+	public double[] getStat() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		arrStat[0]=sum();
+		arrStat[1]=avg();
+		arrStat[2]=min();
+		arrStat[3]=max();
+		arrStat[4]=devstd();
+		arrStat[5]=count();
+		return arrStat;
+	}
+
 }
 
