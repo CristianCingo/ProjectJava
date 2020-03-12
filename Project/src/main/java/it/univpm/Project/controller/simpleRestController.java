@@ -1,5 +1,5 @@
 package it.univpm.Project.controller;
-
+/*
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,15 +8,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.Project.model.HelloWorldClass;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/LocalC
 @RestController
 public class simpleRestController {
+	
 @GetMapping("/hello")
-public HelloWorldClass exampleMethod(@RequestParam(name="param1",defaultValue="World") String param1) {
-return new HelloWorldClass("Cristian","Cingolani");
-}
+
+public HelloWorldClass exampleMethod0(@RequestParam(name="param1",defaultValue="World") String param1) {
+	System.out.println("Ciao");
+	return new HelloWorldClass("Cristian","Cingolani");
+	}
+
 @PostMapping("/hello")
 public HelloWorldClass exampleMethod1(@RequestBody HelloWorldClass body) {
-return body;
+	return body;
 }
+<<<<<<< HEAD
 }
+=======
+
+}
+*/
+>>>>>>> refs/remotes/origin/LocalC
