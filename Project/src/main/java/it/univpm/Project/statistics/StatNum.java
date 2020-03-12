@@ -90,9 +90,5 @@ public class StatNum extends StatBasic{
 	 return af.size();
 	}
 	
-	public getStat() {
-		
-	}
-
 }
 
