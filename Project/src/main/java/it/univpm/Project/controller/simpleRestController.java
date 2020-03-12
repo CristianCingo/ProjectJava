@@ -24,6 +24,5 @@ public HelloWorldClass exampleMethod1(@RequestBody HelloWorldClass body) {
 }
 }
 }
-ciao
 */
 
