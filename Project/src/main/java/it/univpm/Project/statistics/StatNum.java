@@ -34,7 +34,6 @@ public class StatNum extends StatBasic{
 				
 			return (sum);
 		}
-	//ciao
 	
 	private double avg () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
@@ -88,6 +87,16 @@ public class StatNum extends StatBasic{
 	private long count () 
 	{
 	 return af.size();
+	}
+
+	public double[] getStat() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		arrStat[0]=sum();
+		arrStat[1]=avg();
+		arrStat[2]=min();
+		arrStat[3]=max();
+		arrStat[4]=devstd();
+		arrStat[5]=count();
+		return arrStat;
 	}
 }
 
