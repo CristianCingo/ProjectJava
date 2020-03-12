@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import it.univpm.Project.model.HelloWorldClass;
 
 
-
 @RestController
 public class simpleRestController {
 @GetMapping("/hello")
