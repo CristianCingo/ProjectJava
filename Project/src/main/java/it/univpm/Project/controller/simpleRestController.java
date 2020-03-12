@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.Project.model.HelloWorldClass;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/LocalC
 @RestController
 public class simpleRestController {
 	
@@ -26,10 +22,7 @@ public HelloWorldClass exampleMethod0(@RequestParam(name="param1",defaultValue="
 public HelloWorldClass exampleMethod1(@RequestBody HelloWorldClass body) {
 	return body;
 }
-<<<<<<< HEAD
 }
-=======
-
 }
 */
->>>>>>> refs/remotes/origin/LocalC
+
