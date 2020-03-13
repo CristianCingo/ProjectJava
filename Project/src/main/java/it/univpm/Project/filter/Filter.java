@@ -23,7 +23,7 @@ public class Filter<T> {
 	 * @return
 	 */
 	
-	public static boolean check(Object value, String operator, Object th) {
+	public static boolean check(Object value, String operator, Object th){
 		if (th instanceof Number && value instanceof Number) {	
 			Double thC = ((Number)th).doubleValue();
 			Double valuec = ((Number)value).doubleValue();
@@ -59,7 +59,7 @@ public class Filter<T> {
 	 * @return
 	 */
 	
-public Collection<T> select(Collection<T> src, List<String> fieldName,List<String>  operator, List<Object> value,List<String> logicalLinkOperator) {
+public Collection<T> select(Collection<T> src, List<String> fieldName,List<String>  operator, List<Object> value,List<String> logicalLinkOperator){
 		
 		//Caso base
 		Collection<T> out = new ArrayList<T>();		
