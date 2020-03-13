@@ -39,7 +39,7 @@ import java.util.Map;
  * @author Cristian Cingolani e Christian Ascani
  *
  */
-public class ParseJSON {
+public class JsonGetDecode {
 	private String str, line;  //Stringa su cui viene memorizzato il contenuto
 	private URL link;
 	private BufferedReader input;
@@ -48,7 +48,7 @@ public class ParseJSON {
 	 * dalla quale poi si effettua il download
 	 * @param url L'indirizzo web nel quale è contenuto il link al dataset
 	 */
-	public ParseJSON(String url) throws MalformedURLException, IOException
+	public JsonGetDecode(String url) throws MalformedURLException, IOException
 	{
 		this.str = "";
 		this.line = "";
@@ -180,4 +180,5 @@ public class ParseJSON {
 	    }
 	    System.out.println("Data download completed from " + url);
 	}
+
 }
