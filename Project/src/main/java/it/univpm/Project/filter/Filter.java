@@ -28,6 +28,7 @@ public class Filter<T> {
 			Double thC = ((Number)th).doubleValue();
 			Double valuec = ((Number)value).doubleValue();
 			
+			
 			if (operator.equals("=="))
 				return value.equals(th);
 			else if (operator.equals(">"))
@@ -100,19 +101,6 @@ public Collection<T> select(Collection<T> src, List<String> fieldName,List<Strin
 					}
 				}
 				return out;
-				}
-
-				/**
-			     * Metodo che stabilisce se l'argomento in ingresso può essere parsato come intero
-			     * @param fieldName Stringa su cui testare il parse
-			     * @return Restituisce un booleano per esprimere l'esito del test
-			     */
-			    private static boolean isInteger(String fieldName) {
-			        try {
-			            Integer.parseInt(fieldName);
-			            return true;
-			        } catch (Exception e) {
-			            return false;
-			        }
 			}
+
 }
