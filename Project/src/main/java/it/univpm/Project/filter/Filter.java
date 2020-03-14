@@ -54,7 +54,7 @@ public class Filter<T> {
 	 * @param src, collection sorgente di dati di tipo generico T
 	 * @param fieldName, lista di campi sul quale effettuare il filtro per ciascun oggetto nella collection src
 	 * @param operator, lista degli operatori da utilizzare per effettuare ciascun filtro
-	 * @param value, lista dei valori da compare per ogni filtro
+	 * @param value, lista dei valori da comparare per ogni filtro
 	 * @param logicalLinkOperator, lista dei operatori logici (AND, OR )che collegano ciascun filtro 
 	 * @return
 	 */
