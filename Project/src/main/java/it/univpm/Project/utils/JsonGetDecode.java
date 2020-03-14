@@ -1,18 +1,11 @@
 package it.univpm.Project.utils;
 
-import org.json.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONValue;
-import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import java.awt.List;
 
 import java.io.*;
 
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
@@ -21,18 +14,12 @@ import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.StandardCopyOption;
-
-import java.security.KeyException;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import java.util.Date;
 import java.util.Locale;
-
-import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Classe contenente le funzioni di download dei dati json in un dataset json tramite URL
