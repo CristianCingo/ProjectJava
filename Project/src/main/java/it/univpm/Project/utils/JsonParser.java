@@ -7,17 +7,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-import org.apache.catalina.User;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 public class JsonParser{
 	{
 	try {
-	    // create Gson instance
-	    Gson gson = new Gson();
-
 	    // create a reader
 	    Reader reader = Files.newBufferedReader(Paths.get("dataFile.json"));
 

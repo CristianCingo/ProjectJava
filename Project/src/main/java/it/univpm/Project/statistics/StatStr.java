@@ -7,6 +7,11 @@ import java.util.Map;
 
 import it.univpm.Project.dataset.Funding;
 
+/**
+ * Calcolo statistiche di tipo Stringa (occorrenze)
+ * @author Cingolani Cristian & Ascani Christian
+ */
+
 public class StatStr extends StatBasic{
 	
 private Map<String, Integer> occorrenze;

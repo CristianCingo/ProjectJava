@@ -7,6 +7,7 @@ import it.univpm.Project.dataset.Metadati;
 
 /**
  * Classe contenente gli oggetti utili per la memorizzazione di dati e metadati
+ * @author Cingolani Cristian & Ascani Christian
  */
 
 public class Data {
@@ -15,7 +16,7 @@ public class Data {
 	private static ArrayList<Metadati> arrMeta = new ArrayList<Metadati>();
 	
 	/**
-	 * Costruttore utilizzato per la classe Data
+	 * Costruttore utilizzato per la classe Funding
 	 */
 	
 	public Data()
