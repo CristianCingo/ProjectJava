@@ -6,24 +6,21 @@ import java.util.ArrayList;
 import it.univpm.Project.dataset.Funding;
 
 /**
- * Calcoliamo le statistiche
+ * Calcolo statistiche di tipo numerico
+ * @author Cingolani Cristian & Ascani Christian
  */
 
 public class StatNum extends StatBasic{
 
-	private double sum, avg, min, max, devstd, count;
 	private double arrStat[] = new double[6];
 	public StatNum(String param, ArrayList<Funding> af) throws NoSuchMethodException, SecurityException
 	{
 		super(param, af);
-		this.sum = 0;
-		this.avg = 0;
-		this.min = 0;
-		this.max = 0;
-		this.devstd = 0;
-		this.count = 0;
 	}
 	
+	/**
+	 * Calcolo somma
+	 */
 	private double sum () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
 		double sum=0;
@@ -35,6 +32,9 @@ public class StatNum extends StatBasic{
 			return (sum);
 		}
 	
+	/**
+	 * Calcolo media
+	 */
 	private double avg () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
 	      double x=sum();
@@ -47,34 +47,43 @@ public class StatNum extends StatBasic{
 	       }
 	}
 	
+	/**
+	 * Calcolo minimo
+	 */
 	private double min () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
-	 double PossMin=(double)m.invoke(af.get(0));
+	 double Min=(double)m.invoke(af.get(0));
 	 for (int i=0; i<af.size(); i++)
 		{
-		 if((double)m.invoke(af.get(i))<PossMin)
-				PossMin=(double)m.invoke(af.get(i));
+		 if((double)m.invoke(af.get(i))<Min)
+				Min=(double)m.invoke(af.get(i));
 		}
-	 return PossMin;
+	 return Min;
 	}
 	
+	/**
+	 * Calcolo massimo
+	 */
 	private double max () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
-	 double PossMax=(double)m.invoke(af.get(0));
+	 double Max=(double)m.invoke(af.get(0));
 	 for (int i=0; i<af.size(); i++)
 		{
-		 if((double)m.invoke(af.get(i))>PossMax)
-				PossMax=(double)m.invoke(af.get(i));;
+		 if((double)m.invoke(af.get(i))>Max)
+				Max=(double)m.invoke(af.get(i));;
 		}
-	 return PossMax;
+	 return Max;
 	}
 	
+	/**
+	 * Calcolo deviazione standard
+	 */
 	private double devstd () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
-	 double AVG = avg();
+	 double Avg = avg();
 	 double sum=0;
 	 for(int i=0; i<af.size(); i++) 
-		sum += (Math.pow((double)m.invoke(af.get(i))-AVG,2));
+		sum += (Math.pow((double)m.invoke(af.get(i))-Avg,2));
 	 try { 
 		  return Math.sqrt(sum/af.size());
 	     } catch(ArithmeticException e)
@@ -84,11 +93,17 @@ public class StatNum extends StatBasic{
 	       }
 	}
 
+	/**
+	 * Calcolo numero elementi
+	 */
 	private long count () 
 	{
 	 return af.size();
 	}
-
+	
+	/**
+	 * Salvataggio di tutte le statistiche in un array
+	 */
 	public double[] getStat() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		arrStat[0]=sum();
 		arrStat[1]=avg();
@@ -98,5 +113,6 @@ public class StatNum extends StatBasic{
 		arrStat[5]=count();
 		return arrStat;
 	}
+
 }
 

@@ -3,6 +3,9 @@ package it.univpm.Project.dataset;
 public class Metadati {
 private String alias, sourceF, type;
 	
+    /**
+    * Metodi per assegnazione e restituzione metadati
+    */
 	public Metadati(String alias, String sourceField, String type)
 	{
 		this.alias = alias;
