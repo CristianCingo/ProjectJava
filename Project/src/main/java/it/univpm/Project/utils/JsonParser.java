@@ -18,6 +18,9 @@ import com.google.gson.reflect.TypeToken;
 public class JsonParser {
 	public static void getDatafromJSON() throws IOException {
 	try {
+	    // create Gson instance
+	    Gson gson = new Gson();
+
 	    // create a reader
 	    Reader reader = Files.newBufferedReader(Paths.get("dataFile.json"));
 
