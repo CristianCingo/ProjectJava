@@ -1,5 +1,6 @@
 package it.univpm.Project.controller;
 
+import it.univpm.Project.dataset.Funding;
 import it.univpm.Project.utils.JsonGetDecode;
 import it.univpm.Project.utils.JsonParser;
 
@@ -24,10 +25,11 @@ public class FundController {
      */
     @RequestMapping(value = "/data", method = RequestMethod.POST, produces="application/json")
     String getAllDataFiltered(@RequestBody(required = false) String filter){
+    	
         try {
-            AgricultureAidCollection objects = CSVParser.getDataFromCSV();
+            fundings objects = JsonParser.getDatafromJSON();
             JSONObject json = null;
-            ArrayList<AgricultureAid> result = null;
+            ArrayList<Funding> result = null;
             if(filter != null){
                 try {
                     json = new JSONObject(filter);
