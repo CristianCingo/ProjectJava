@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import it.univpm.Project.dataset.Funding;
 
 /**
- * Calcoliamo le statistiche
+ * Calcolo statistiche di tipo numerico
+ * @author Cingolani Cristian & Ascani Christian
  */
 
 public class StatNum extends StatBasic{
@@ -17,6 +18,9 @@ public class StatNum extends StatBasic{
 		super(param, af);
 	}
 	
+	/**
+	 * Calcolo somma
+	 */
 	private double sum () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
 		double sum=0;
@@ -28,6 +32,9 @@ public class StatNum extends StatBasic{
 			return (sum);
 		}
 	
+	/**
+	 * Calcolo media
+	 */
 	private double avg () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
 	      double x=sum();
@@ -40,6 +47,9 @@ public class StatNum extends StatBasic{
 	       }
 	}
 	
+	/**
+	 * Calcolo minimo
+	 */
 	private double min () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
 	 double Min=(double)m.invoke(af.get(0));
@@ -51,6 +61,9 @@ public class StatNum extends StatBasic{
 	 return Min;
 	}
 	
+	/**
+	 * Calcolo massimo
+	 */
 	private double max () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
 	 double Max=(double)m.invoke(af.get(0));
@@ -62,6 +75,9 @@ public class StatNum extends StatBasic{
 	 return Max;
 	}
 	
+	/**
+	 * Calcolo deviazione standard
+	 */
 	private double devstd () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
 	 double Avg = avg();
@@ -77,12 +93,17 @@ public class StatNum extends StatBasic{
 	       }
 	}
 
+	/**
+	 * Calcolo numero elementi
+	 */
 	private long count () 
 	{
 	 return af.size();
 	}
 	
-	
+	/**
+	 * Salvataggio di tutte le statistiche in un array
+	 */
 	public double[] getStat() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		arrStat[0]=sum();
 		arrStat[1]=avg();
