@@ -39,7 +39,8 @@ else {
 }
 }
 
-public Map<String, Integer> getOccorrenze() {
+public Map<String, Integer> getOccorrenze() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+	numeroOccorrenze();
 	return occorrenze;
 }
 

@@ -16,7 +16,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class JsonParser {
 	
 	private String data;
-	private String[] line;
 	private ArrayList<Funding> af;
 	ObjectMapper mapper = new ObjectMapper();
 	
@@ -34,7 +33,7 @@ public class JsonParser {
 		    for (input = reader.readLine(); input != null; input = reader.readLine()) {
 		         text.add(input);
 		    }
-		    ArrayList<Funding> af = (ArrayList<Funding>) Arrays.asList(mapper.readValue(input, arrFunding));
+		    af = (ArrayList<Funding>) Arrays.asList(mapper.readValue(input, Funding[].class));
 		    reader.close();
 		} catch (FileNotFoundException fnfe) {
 		    fnfe.printStackTrace();
