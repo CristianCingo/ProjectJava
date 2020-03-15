@@ -59,6 +59,8 @@ public class Filter<T> {
 	 * @return
 	 */
 	
+	
+		
 public Collection<T> select(Collection<T> src, List<String> fieldName,List<String>  operator, List<Object> value,List<String> logicalLinkOperator){
 		
 		//Caso base

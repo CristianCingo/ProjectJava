@@ -2,14 +2,12 @@ package it.univpm.Project.utils;
 
 import it.univpm.Project.dataset.Data;
 import it.univpm.Project.dataset.Funding;
-import it.univpm.Project.dataset.Data;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
