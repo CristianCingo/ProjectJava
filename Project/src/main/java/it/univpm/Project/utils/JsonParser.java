@@ -1,6 +1,5 @@
 package it.univpm.Project.utils;
 
-import it.univpm.Project.dataset.Data;
 import it.univpm.Project.dataset.Funding;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -13,17 +12,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonParser {
 	
-	private String data;
-	private ArrayList<Funding> af;
 	ObjectMapper mapper = new ObjectMapper();
-	
-	public JsonParser(String data)
+
+	public JsonParser()
 	{
-		this.data = data;
-		this.af = Data.getArrFunding();
 	}
 	
-	public void parse() throws FileNotFoundException, IOException, NullPointerException, NumberFormatException {
+	public void parse(ArrayList<Funding> af) throws FileNotFoundException, IOException, NullPointerException, NumberFormatException {
 		String input;
 		ArrayList<String> text = new ArrayList<String>();
 		try {
@@ -33,6 +28,7 @@ public class JsonParser {
 		    }
 		    af = (ArrayList<Funding>) Arrays.asList(mapper.readValue(input, Funding[].class));
 		    reader.close();
+		    
 		} catch (FileNotFoundException fnfe) {
 		    fnfe.printStackTrace();
 		} catch(IOException ioe){
