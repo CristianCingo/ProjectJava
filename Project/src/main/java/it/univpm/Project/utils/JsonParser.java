@@ -12,10 +12,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonParser {
 	
+	private String dataset = "dataFile.json";
 	ObjectMapper mapper = new ObjectMapper();
 	
-	public JsonParser()
+	public JsonParser(String dataset)
 	{
+		this.dataset = dataset;
 	}
 	
 	/**
@@ -25,7 +27,7 @@ public class JsonParser {
 		String input;
 		ArrayList<String> text = new ArrayList<String>();
 		try {
-		    BufferedReader reader = new BufferedReader(new FileReader("dataFile.json"));
+		    BufferedReader reader = new BufferedReader(new FileReader(dataset));
 		    for (input = reader.readLine(); input != null; input = reader.readLine()) {
 		         text.add(input);
 		    }
