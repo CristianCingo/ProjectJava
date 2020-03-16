@@ -1,17 +1,13 @@
 package it.univpm.Project.filter;
 
-import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
-import com.google.gson.stream.JsonReader;
 
 import it.univpm.Project.dataset.Funding;
 import it.univpm.Project.filter.RepInterface;
@@ -19,7 +15,7 @@ import it.univpm.Project.filter.RepInterface;
 
 public class RepFunding<ArrayFunding> implements RepInterface<Funding>{
 	
-	private static final String filename ="C:\\\\fileName.json";  
+	private static final String filename ="C://dataFile.json";  
 	private static List<Funding> FundingList=new ArrayList<Funding>();
 	private static Filter<Funding> filterService=new Filter<Funding>(); 
 	
