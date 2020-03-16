@@ -103,7 +103,7 @@ public class JsonGetDecode {
 		        urlData = (String)jOb.get("url");		//get the url of the resource
 		        System.out.println(format + " | " + date + " | " + urlData);
 		        if(format.equals("json")) {		    //data is downloaded only if the format is json
-		        	downloadJSON(urlData, "dataFile.json");
+		        	downloadJSON(urlData, "C://dataFile.json");
 		        	return true;
 		        }
 		    }
@@ -111,7 +111,7 @@ public class JsonGetDecode {
 	}catch (FileAlreadyExistsException e) 	         //this exception is thrown when the file already exists
 	{
 		
-		File dataFile = new File("dataFile.json");
+		File dataFile = new File("C://dataFile.json");
 		String fileDataString =	dateFormat.format(dataFile.lastModified());		//get the data of the last edit of the file
 		Date fileData = null;
 		try {
@@ -128,7 +128,7 @@ public class JsonGetDecode {
 			if (dataFile.delete())		//the old data file is deleted and then the new data is downloaded
 				{try {
 					downloadJSON(urlData, 
-							"dataFile.json");
+							"C://dataFile.json");
 					return true;
 				} catch (Exception e1) {
 					e1.printStackTrace();
