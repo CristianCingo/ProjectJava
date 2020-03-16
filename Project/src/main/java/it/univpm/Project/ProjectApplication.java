@@ -17,14 +17,16 @@ public class ProjectApplication {
 	 * file json contenete i dati. Successivamente si avvia la spring application.
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException, IOException {
 		
-			JsonGetDecode dd = new JsonGetDecode("https://www.dati.gov.it/api/3/action/package_show?id=bb6a09a7-af75-4fa5-805f-ed38eda6e883");
+			
+		JsonGetDecode dd = new JsonGetDecode("https://www.dati.gov.it/api/3/action/package_show?id=bb6a09a7-af75-4fa5-805f-ed38eda6e883");
 			
 			if (dd.readFile()) {
 				Data savedData = new Data();
 				JsonParser p = new JsonParser("dataFile.json");
 				p.parse();
+				savedData.setArrFunding(p.af);
 			}
 	}
 

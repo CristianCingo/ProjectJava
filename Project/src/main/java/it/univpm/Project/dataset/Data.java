@@ -16,7 +16,7 @@ public class Data {
 	private static ArrayList<Metadati> arrMeta = new ArrayList<Metadati>();
 	
 	/**
-	 * Costruttore utilizzato per la classe Funding
+	 * Costruttore utilizzato per la classe F
 	 */
 	
 	public Data()
@@ -52,6 +52,10 @@ public class Data {
 	
 	public static ArrayList<Funding> getArrFunding() {
 		return arrFunding;
+	}
+	
+	public void setArrFunding(ArrayList<Funding> f) {
+		arrFunding=f;
 	}
 	
 	/**
