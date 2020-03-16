@@ -13,11 +13,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class JsonParser {
 	
 	ObjectMapper mapper = new ObjectMapper();
-
+	
 	public JsonParser()
 	{
 	}
 	
+	/**
+	 * Memorizza le informazioni del dataset in un Arraylist di oggetti 
+	 */
 	public void parse(ArrayList<Funding> af) throws FileNotFoundException, IOException, NullPointerException, NumberFormatException {
 		String input;
 		ArrayList<String> text = new ArrayList<String>();
@@ -28,7 +31,6 @@ public class JsonParser {
 		    }
 		    af = (ArrayList<Funding>) Arrays.asList(mapper.readValue(input, Funding[].class));
 		    reader.close();
-		    
 		} catch (FileNotFoundException fnfe) {
 		    fnfe.printStackTrace();
 		} catch(IOException ioe){
