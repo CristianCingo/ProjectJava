@@ -28,6 +28,10 @@ public class ProjectApplication {
 				p.parse();
 				savedData.setArrFunding(p.af);
 			}
+			
+			else System.out.println("Impossibile avviare l'applicazione: il Dataset non è stato trovato.");
+			SpringApplication.run(ProjectApplication.class, args);
+			
 	}
 
 }
