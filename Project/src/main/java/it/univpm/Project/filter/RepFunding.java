@@ -14,7 +14,7 @@ import it.univpm.Project.filter.RepInterface;
 
 public class RepFunding implements RepInterface<Funding>{
 	
-	private static final String filename ="C://dataFile.json";  
+	private static final String filename ="dataFile.json";  
 	private static List<Funding> FundingList=new ArrayList<Funding>();
 	private static Filter<Funding> filterService=new Filter<Funding>(); 
 	
