@@ -1,12 +1,11 @@
 package it.univpm.Project.filter;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import it.univpm.Project.dataset.Funding;
 import it.univpm.Project.filter.RepInterface;
@@ -14,7 +13,7 @@ import it.univpm.Project.filter.RepInterface;
 
 public class RepFunding implements RepInterface<Funding>{
 	
-	private static final String filename ="C://dataFile.json";  
+	private static final String filename ="dataFile.json";  
 	private static List<Funding> FundingList=new ArrayList<Funding>();
 	private static Filter<Funding> filterService=new Filter<Funding>(); 
 	
@@ -22,23 +21,11 @@ public class RepFunding implements RepInterface<Funding>{
 	
 	/**
 	 * Il costruttore effettua un parsing dei dati all'interno del json in data object
-	 * mediante l'utilizzo della libreria univocity-parser json: viene popolata la collection hotelList.
+	 * mediante l'utilizzo di JsonParser: viene popolata la collection hotelList.
 	 */
 	public RepFunding() 
 	{
-	        Gson gson = new Gson();
-
-	        try (Reader reader = new FileReader(filename)) {
-
-	            // Converte JSON File in Java Object
-	            Funding f = gson.fromJson(reader, Funding.class);
-				
-				// stampa
-	            System.out.println(f);
-
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
+		
 	}
 	
 	//region method not used
