@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Filtraggio di un generico tipo T
+ * @author Cristian Cingolani & Christian Ascani
  * @param <T>
  */
 
@@ -59,9 +60,7 @@ public class Filter<T> {
 	 * @return
 	 */
 	
-	
-		
-public Collection<T> select(Collection<T> src, List<String> fieldName,List<String>  operator, List<Object> value,List<String> logicalLinkOperator){
+    public Collection<T> select(Collection<T> src, List<String> fieldName,List<String>  operator, List<Object> value,List<String> logicalLinkOperator){
 		
 		//Caso base
 		Collection<T> out = new ArrayList<T>();		
@@ -86,14 +85,14 @@ public Collection<T> select(Collection<T> src, List<String> fieldName,List<Strin
 				e.printStackTrace();
 			}					
 		}
-		//Parte ricorsiva: viene lanciato qunado logicalLinkOperator non è nulla (uso di OR o AND)
-				if (logicalLinkOperator!=null && logicalLinkOperator.size()>0)	/*Quando logicalLinkOperator è nulla viene lasciata la parte ricorsiva*/
+		//Parte ricorsiva: viene lanciato quando logicalLinkOperator non è nulla (uso di OR o AND)
+				if (logicalLinkOperator!=null && logicalLinkOperator.size()>0)	//Quando logicalLinkOperator è nulla viene lasciata la parte ricorsiva
 				{
 					List<String> subLogicalLinkOperator=null;
 					if (logicalLinkOperator.size()>1)
 						subLogicalLinkOperator=logicalLinkOperator.subList(1, logicalLinkOperator.size());
 					
-					if (logicalLinkOperator.get(0).equals("AND"))	/*Con AND la collection esterna diventa la src collection attuale della chiamata ricorsiva*/
+					if (logicalLinkOperator.get(0).equals("AND"))	//Con AND la collection esterna diventa la src collection attuale della chiamata ricorsiva
 																	
 						return select(out,fieldName.subList(1, fieldName.size()),operator.subList(1, operator.size()),value.subList(1,value.size()),subLogicalLinkOperator);
 					else

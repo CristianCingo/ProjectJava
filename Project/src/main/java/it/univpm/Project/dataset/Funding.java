@@ -1,7 +1,11 @@
 package it.univpm.Project.dataset;
 
+/**
+ * Classe che descrive Funding e implementa getter e setter
+ * @author Cristian Cingolani & Christian Ascani
+ *
+ */
 public class Funding {
-	
 		public String CodP;
 		public String CodCUP;
 		public String TipCUP;
@@ -24,7 +28,7 @@ public class Funding {
 		public double ImportoL;
 		
 		/**
-		 * Costruttore della classe Funding
+		* Costruttore della classe Funding
 		* @param CodiceProgetto;
 		* @param CodiceCUP;
 		* @param TipologiaCUP;
@@ -437,7 +441,6 @@ public class Funding {
 		 * Metodo che imposta il valore di ImportoLiquidato
 		 * @param ImportoLiquidato
 		 */
-		
 		public void setImportoLiquidato(double ImportoLiquidato) {
 			this.ImportoL = ImportoLiquidato;
 		}

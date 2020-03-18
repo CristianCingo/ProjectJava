@@ -14,6 +14,13 @@ public class StatBasic {
 	protected ArrayList<Funding> af;
 	protected Method m;
 	
+	/**
+	 * Costruttore della superclasse
+	 * @param param
+	 * @param af
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 */
 	public StatBasic(String param, ArrayList<Funding> af) throws NoSuchMethodException, SecurityException
 	{
 		this.af = af;

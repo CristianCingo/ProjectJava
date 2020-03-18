@@ -15,6 +15,15 @@ import it.univpm.Project.dataset.Funding;
 public class StatStr extends StatBasic{
 	
 private Map<String, Integer> occorrenze;
+
+/**
+ * Costruttore della classe StatStr
+ * @param param
+ * @param af
+ * @throws NoSuchMethodException
+ * @throws SecurityException
+ */
+
 public StatStr (String param, ArrayList<Funding> af) throws NoSuchMethodException, SecurityException
 {
 	super(param, af);

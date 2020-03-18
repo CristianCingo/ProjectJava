@@ -15,7 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Controller dell'applicazione
+ * Controller relativo ai dati di ciascun Funding, fa riferimento ad una RepFunding:
+ * questa è una variabile statica in quanto la struttura dati sul quale si fa riferimento (contenuta all'interno della suddetta
+ * repository) deve essere univoca per ogni chiamata API effettuata al controller.
  * @author Cristian Cingolani & Christian Ascani
  */
 

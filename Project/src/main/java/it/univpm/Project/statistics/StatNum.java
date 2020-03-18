@@ -13,6 +13,15 @@ import it.univpm.Project.dataset.Funding;
 public class StatNum extends StatBasic{
 
 	private double arrStat[] = new double[6];
+	
+	/**
+	 * Costruttore della classe StatNum
+	 * @param param
+	 * @param af
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 */
+	
 	public StatNum(String param, ArrayList<Funding> af) throws NoSuchMethodException, SecurityException
 	{
 		super(param, af);

@@ -10,10 +10,11 @@ import it.univpm.Project.utils.*;
 public class ProjectApplication {
 	
 	/**
-	 * Main del programma. Inizialmente si istanzia un oggetto della classe  per scaricare il json e il 
-	 * file json contenete i dati. Successivamente si avvia la spring application.
+	 * Main del programma. Inizialmente si istanzia un oggetto della classe JsonGetDecode per scaricare il json
+	 * e il file json contenete i dati. Successivamente si avvia la spring application.
 	 * @param args
 	 * @throws Exception 
+	 * @author Cristian Cingolani & Christian Ascani
 	 */
 	public static void main(String[] args) throws Exception {
 		

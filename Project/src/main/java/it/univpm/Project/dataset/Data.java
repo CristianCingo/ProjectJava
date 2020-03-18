@@ -16,7 +16,7 @@ public class Data {
 	private static ArrayList<Metadati> arrMeta = new ArrayList<Metadati>();
 	
 	/**
-	 * Costruttore utilizzato per la classe Funding
+	 * Costruttore utilizzato per la classe Data
 	 */
 	
 	public Data()

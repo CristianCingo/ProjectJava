@@ -1,6 +1,5 @@
 package it.univpm.Project.utils;
 
-
 import java.io.*;
 
 import java.net.URI;
@@ -23,21 +22,21 @@ import org.json.simple.JSONValue;
 
 /**
  * Classe contenente le funzioni di download dei dati json in un dataset json tramite URL
- * @author Cristian Cingolani e Christian Ascani
+ * @author Cristian Cingolani & Christian Ascani
  *
  */
+
 public class JsonGetDecode {
 	private URL link;
+
 	/**
-	 * Costruttore che copia il contenuto dell'URL e lo memorizza in una variabile di tipo String
-	 * dalla quale poi si effettua il download
+	 * Costruttore che copia il contenuto dell'URL e lo memorizza in una variabile
 	 * @param url L'indirizzo web nel quale è contenuto il link al dataset
 	 */
+	
 	public JsonGetDecode(String url) throws IOException
 	{
-		
 		this.link = new URL(url);
-	  
 	}
 	
 	/**
@@ -48,6 +47,7 @@ public class JsonGetDecode {
 	 * un FileAlreadyExistException: il metodo controlla se il timeStamp del json che sta per
 	 * scaricare è antecedente alla data dell'ultima modifica del file scaricato.
 	 */
+	
 	public boolean readFile(){
 	DateFormat dateFormat = new SimpleDateFormat("E d MMMM yyyy", Locale.ITALIAN);	//get the date format
 	Date date=null;
@@ -85,6 +85,7 @@ public class JsonGetDecode {
 		System.out.println("JSON parsed!");
 		
 		System.out.println("Starting download file JSON...");
+		
 		for(Object x: resourcesObj){	            //for each element of resourcesObj
 		    if ( x instanceof JSONObject ) {
 		        JSONObject jOb = (JSONObject)x;     //each element into the array is converted into a JSONObject

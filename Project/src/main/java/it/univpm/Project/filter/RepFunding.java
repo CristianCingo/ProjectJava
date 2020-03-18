@@ -1,22 +1,22 @@
 package it.univpm.Project.filter;
 
-
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
 import it.univpm.Project.dataset.Funding;
-import it.univpm.Project.statistics.*;
 import it.univpm.Project.utils.JsonParser;
 
+/**
+ * Repository che contiene i dati degi funding, prelevandoli dal file dataFile.json. Implementa
+ * l'interfaccia RepInterface<Funding>.
+ * @author Cristian Cingolani & Christian Ascani
+ */
 
 public class RepFunding implements RepInterface<Funding>{
 	
 	private static final String filename = "dataFile.json";  
-	private static List<Funding> FundingList=new ArrayList<Funding>();
-	private static Filter<Funding> filterService=new Filter<Funding>(); 
-	
-	
+	private static List<Funding> FundingList = new ArrayList<Funding>();
+	private static Filter<Funding> filterService = new Filter<Funding>(); 
 	
 	/**
 	 * Il costruttore effettua un parsing dei dati all'interno del json in data object
@@ -66,11 +66,11 @@ public class RepFunding implements RepInterface<Funding>{
 	}
 	
 	/**
-	 * Restituisce la lista degli hotel filtrata utilizzando il metodo select dell'oggetto filterService.
+	 * Restituisce la lista di Funding filtrata utilizzando il metodo select dell'oggetto filterService.
 	 * @param fieldName, lista dei campi sul quale effettuare il filtraggio
 	 * @param operator, lista degli operatori da utilizzare per ogni filtro
-	 * @param value, lista dei valori da compare per ogni filtro
-	 * @param logicalLinkOperator, lista dei operatori logici (AND, OR )che collegano ciascun filtro 
+	 * @param value, lista dei valori da comparare per ogni filtro
+	 * @param logicalLinkOperator, lista dei operatori logici (AND, OR)che collegano ciascun filtro 
 	 * (in caso in cui la variabile filter contenesse più filtri).
 	 * @return
 	 */

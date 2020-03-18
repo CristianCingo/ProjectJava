@@ -9,7 +9,12 @@ import java.util.ArrayList;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-
+/**
+ * Classe utilizzata come servizio per la lettura di un json. Questo viene gestito mediante una lista
+ * di vettori di oggetti
+ * @author Cristian Cingolani & Christian Ascani
+ */
+ 
 public class JsonParser {
 	private String dataset;
 	private ArrayList<Funding> af;
@@ -20,12 +25,15 @@ public class JsonParser {
 		this.af = Data.getArrFunding();
 	}
 	
+	/**
+	 * Memorizza le informazioni del dataset in un Arraylist di oggetti
+	 */
 	public void parse() throws Exception {
-		FileReader reader = new FileReader(dataset);
+		FileReader reader = new FileReader(dataset);    //Reading the json file
 		JSONParser jsonParser = new JSONParser();
 		jsonParser.parse(reader);
-        JSONObject jsonObject = new JSONObject();
-		for(Funding f : af) {
+        JSONObject jsonObject = new JSONObject();       //Creating a JSONObject
+		for(Funding f : af) {                           //Iterating
 		f = new Funding(
                 (String) jsonObject.get("CodiceProgetto"),
                 (String) jsonObject.get("CodiceCUP"),
@@ -48,7 +56,7 @@ public class JsonParser {
                 Double.valueOf(jsonObject.get("ImportoCertificato").toString()),
                 Double.valueOf(jsonObject.get("ImportoLiquidato").toString()));
 		
-		af.add(f);
+		af.add(f);                   //Filling the ArrayList
 		}
 		}
 }
