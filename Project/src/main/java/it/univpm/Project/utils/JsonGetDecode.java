@@ -14,8 +14,6 @@ import java.nio.file.FileAlreadyExistsException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import java.text.ParseException;
-
 import java.util.Date;
 import java.util.Locale;
 
@@ -113,7 +111,7 @@ public class JsonGetDecode {
 			ex.printStackTrace();
 		}
 
-		if(fileData.compareTo(date)<0)	                  //.compareTo method returns int>0 if fileData>date whilst it returns int <0 if date>fileData
+		if(fileData.compareTo(date)<0)	                  //.compareTo method returns int<0 if fileData>date whilst it returns int >0 if date>fileData
 			System.out.println("The data file already exists | Last edit: " + fileDataString);
 		else
 		{

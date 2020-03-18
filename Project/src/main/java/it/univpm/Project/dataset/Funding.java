@@ -16,12 +16,12 @@ public class Funding {
 		public String NomeB;
 		public String SedeLB;
 		public String CodFB;
-		public float CostoTot;
-		public float SpesaAm;
-		public float QuotaUE;
-		public float SpesaR;
-		public float ImportoC;
-		public float ImportoL;
+		public double CostoTot;
+		public double SpesaAm;
+		public double QuotaUE;
+		public double SpesaR;
+		public double ImportoC;
+		public double ImportoL;
 		
 		/**
 		 * Costruttore della classe Funding
@@ -50,8 +50,8 @@ public class Funding {
 				String DenominazioneProgetto,String SintesiProgetto,String UbicazioneProgetto,
 				String DataInizio,String DataFinePrevista,String DataFineEffettiva,String ModalitaAttuativa,
 				String NomeBeneficiario,String SedeLegaleBeneficiario,String CodiceFiscaleBeneficiario,
-				float CostoTotale,float SpesaAmmissibile,float QuotaUnioneEuropea,float SpesaRealizzata,
-				float ImportoCertificato,float ImportoLiquidato) {
+				double CostoTotale,double SpesaAmmissibile,double QuotaUnioneEuropea,double SpesaRealizzata,
+				double ImportoCertificato,double ImportoLiquidato) {
 			
 			this.CodP = CodiceProgetto;
 			this.CodCUP = CodiceCUP;
@@ -213,7 +213,7 @@ public class Funding {
 		 * @return CostoTotale
 		 */
 		
-		public float getCostoTotale() {
+		public double getCostoTotale() {
 			return CostoTot;
 		}
 
@@ -222,7 +222,7 @@ public class Funding {
 		 * @return SpesaAmmissibile
 		 */
 		
-		public float getSpesaAmmissibile() {
+		public double getSpesaAmmissibile() {
 			return SpesaAm;
 		}
 
@@ -231,7 +231,7 @@ public class Funding {
 		 * @return QuotaUnioneEuropea
 		 */
 		
-		public float getQuotaUnioneEuropea() {
+		public double getQuotaUnioneEuropea() {
 			return QuotaUE;
 		}
 
@@ -240,7 +240,7 @@ public class Funding {
 		 * @return SpesaRealizzata
 		 */
 		
-		public float getSpesaRealizzata() {
+		public double getSpesaRealizzata() {
 			return SpesaR;
 		}
 		
@@ -249,7 +249,7 @@ public class Funding {
 		 * @return ImportoCertificato
 		 */
 		
-		public float getImportoCertificato() {
+		public double getImportoCertificato() {
 			return ImportoC;
 		}
 		
@@ -258,7 +258,7 @@ public class Funding {
 		 * @return ImportoLiquidato
 		 */
 		
-		public float getImportoLiquidato() {
+		public double getImportoLiquidato() {
 			return ImportoL;
 		}
 		
@@ -393,7 +393,7 @@ public class Funding {
 		 * @param CostoTotale
 		 */
 		
-		public void setCostoTotale(float CostoTotale) {
+		public void setCostoTotale(double CostoTotale) {
 			this.CostoTot = CostoTotale;
 		}
 
@@ -402,7 +402,7 @@ public class Funding {
 		 * @param SpesaAmmissibile
 		 */
 		
-		public void setSpesaAmmissibile(float SpesaAmmissibile) {
+		public void setSpesaAmmissibile(double SpesaAmmissibile) {
 			this.SpesaAm = SpesaAmmissibile;
 		}
 
@@ -411,7 +411,7 @@ public class Funding {
 		 * @param QuotaUnioneEuropea
 		 */
 		
-		public void setQuotaUnioneEuropea(float QuotaUnioneEuropea) {
+		public void setQuotaUnioneEuropea(double QuotaUnioneEuropea) {
 			this.QuotaUE = QuotaUnioneEuropea; 
 		}
 
@@ -420,7 +420,7 @@ public class Funding {
 		 * @param SpesaRealizzata
 		 */
 		
-		public void setSpesaRealizzata(float SpesaRealizzata) {
+		public void setSpesaRealizzata(double SpesaRealizzata) {
 			this.SpesaR = SpesaRealizzata;
 		}
 		
@@ -429,7 +429,7 @@ public class Funding {
 		 * @param ImportoCertificato
 		 */
 		
-		public void setImportoCertificato(float ImportoCertificato) {
+		public void setImportoCertificato(double ImportoCertificato) {
 			this.ImportoC = ImportoCertificato;
 		}
 		
@@ -438,7 +438,7 @@ public class Funding {
 		 * @param ImportoLiquidato
 		 */
 		
-		public void setImportoLiquidato(float ImportoLiquidato) {
+		public void setImportoLiquidato(double ImportoLiquidato) {
 			this.ImportoL = ImportoLiquidato;
 		}
 }

@@ -17,16 +17,16 @@ public class ProjectApplication {
 	 */
 	public static void main(String[] args) throws Exception {
 		
-			
 		JsonGetDecode dd = new JsonGetDecode("https://www.dati.gov.it/api/3/action/package_show?id=bb6a09a7-af75-4fa5-805f-ed38eda6e883");
 			
 			if (dd.readFile()) {
-				Data d = new Data();
+				Data data = new Data();
 				JsonParser p = new JsonParser("dataFile.json");
-				p.readFile();
+				p.parse();
 			}
 			
 			else System.out.println("Impossibile avviare l'applicazione: il Dataset non è stato trovato.");
+			
 			SpringApplication.run(ProjectApplication.class, args);
 			
 	}
