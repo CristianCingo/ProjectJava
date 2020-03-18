@@ -1,12 +1,8 @@
 package it.univpm.Project.utils;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONValue;
-import org.json.JSONObject;
 
 import java.io.*;
 
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
@@ -18,8 +14,14 @@ import java.nio.file.FileAlreadyExistsException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import java.text.ParseException;
+
 import java.util.Date;
 import java.util.Locale;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
 /**
  * Classe contenente le funzioni di download dei dati json in un dataset json tramite URL
@@ -27,26 +29,17 @@ import java.util.Locale;
  *
  */
 public class JsonGetDecode {
-	private String str, line;  //Stringa su cui viene memorizzato il contenuto
 	private URL link;
-	private BufferedReader input;
 	/**
 	 * Costruttore che copia il contenuto dell'URL e lo memorizza in una variabile di tipo String
 	 * dalla quale poi si effettua il download
 	 * @param url L'indirizzo web nel quale è contenuto il link al dataset
 	 */
-	public JsonGetDecode(String url) throws MalformedURLException, IOException
+	public JsonGetDecode(String url) throws IOException
 	{
-		this.str = "";
-		this.line = "";
+		
 		this.link = new URL(url);
-	    this.input = new BufferedReader(new InputStreamReader(link.openStream()));
-	    
-	    while ((line = input.readLine()) != null)
-	    {
-	    	str += line;
-	    }
-	    input.close();
+	  
 	}
 	
 	/**
@@ -57,14 +50,14 @@ public class JsonGetDecode {
 	 * un FileAlreadyExistException: il metodo controlla se il timeStamp del json che sta per
 	 * scaricare è antecedente alla data dell'ultima modifica del file scaricato.
 	 */
-	public boolean readFile() {
+	public boolean readFile(){
 	DateFormat dateFormat = new SimpleDateFormat("E d MMMM yyyy", Locale.ITALIAN);	//get the date format
 	Date date=null;
 	String format = "", urlData = "";
 
 	try {
 		
-		URLConnection openConnection = new URL(str).openConnection();		//Opening the connection
+		URLConnection openConnection = link.openConnection();		//Opening the connection
 		openConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0");
 		InputStream input = openConnection.getInputStream();
 		
@@ -120,7 +113,7 @@ public class JsonGetDecode {
 			ex.printStackTrace();
 		}
 
-		if(fileData.compareTo(date)>0)	                  //.compareTo method returns int>0 if fileData>date whilst it returns int <0 if date>fileData
+		if(fileData.compareTo(date)<0)	                  //.compareTo method returns int>0 if fileData>date whilst it returns int <0 if date>fileData
 			System.out.println("The data file already exists | Last edit: " + fileDataString);
 		else
 		{
