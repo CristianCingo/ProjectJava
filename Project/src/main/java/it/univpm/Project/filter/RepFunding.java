@@ -1,19 +1,18 @@
 package it.univpm.Project.filter;
 
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import it.univpm.Project.dataset.Funding;
-import it.univpm.Project.filter.RepInterface;
+import it.univpm.Project.statistics.*;
+import it.univpm.Project.utils.JsonParser;
 
 
 public class RepFunding implements RepInterface<Funding>{
 	
-	private static final String filename ="dataFile.json";  
+	private static final String filename = "dataFile.json";  
 	private static List<Funding> FundingList=new ArrayList<Funding>();
 	private static Filter<Funding> filterService=new Filter<Funding>(); 
 	
@@ -21,11 +20,17 @@ public class RepFunding implements RepInterface<Funding>{
 	
 	/**
 	 * Il costruttore effettua un parsing dei dati all'interno del json in data object
-	 * mediante l'utilizzo di JsonParser: viene popolata la collection hotelList.
+	 * mediante l'utilizzo di JsonParser: viene popolata la collection FundingList.
 	 */
 	public RepFunding() 
 	{
-		
+		try {
+			JsonParser parser = new JsonParser(filename);
+			parser.parse();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//region method not used
@@ -74,5 +79,3 @@ public class RepFunding implements RepInterface<Funding>{
 		return (List<Funding>) filterService.select(FundingList, fieldName, operator, value,logicalLinkOperator);
 	}
 }
-	
-	
