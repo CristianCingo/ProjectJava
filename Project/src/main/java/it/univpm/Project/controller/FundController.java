@@ -69,8 +69,7 @@ public class FundController {
 	 * restituisce i dati relativi a tutti i funding se il filtro impostato è null, 
 	 * restituisce i dati filtrati se è applicato un filtro
 	 * Struttura filtro
-	 *?filter=PrimoCampo:operatore(<,>,<=,>=,==):PrimoValore:operatoreLogico(AND,OR):SecondoCampo:operatore:SecondoValore....
-	 * I filtri non possono essere impostati su tutti i campi
+	 * ?filter=PrimoCampo:operatore(<,>,<=,>=,==):PrimoValore:operatoreLogico(AND,OR):SecondoCampo:operatore:SecondoValore....
 	 * 
 	 * @param filter
 	 * @return
@@ -101,12 +100,21 @@ public class FundController {
 				fieldNameList.add(field); 
 				operatorList.add(operator);
 				
-			
-				double a;
-				a=Double.parseDouble(field);	
-				
-				valueList.add(a);
 
+				switch (RepFunding.getTypeOfAlias(field))	       //For the value is needed to know the type of the value in order to
+																   //allow the filterService performing a correct filtering
+				{
+				case "integer":
+					valueList.add(Integer.parseInt(value));
+					break;
+				case "double":
+					valueList.add(Double.parseDouble(value));
+					break;
+				default:
+					valueList.add(value);
+
+				}
+				
 				if (filtering.length>(3+(4*i)))		
 					logicalLinkOperator.add(filtering[3+(4*i)]);
 				

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import it.univpm.Project.dataset.Funding;
 
 /**
- * Superclasse utile per il calcolo delle statistiche
+ * Superclasse base per il calcolo delle statistiche
  * @author Cingolani Cristian & Ascani Christian
  */
 

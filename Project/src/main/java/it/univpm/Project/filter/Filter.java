@@ -15,7 +15,7 @@ import java.util.List;
 public class Filter<T> {
 	
 	/**
-	 * Viene restituito true se l'oggetto value è 'equals' all'oggetto th 
+	 * Viene restituito true se l'oggetto value è 'equals' all'oggetto th
 	 * Per oggetti numerici si controlla se l'operatore è "<","<=",">",">=","=="
 	 * Per oggetti stringa si controlla se questi due sono uguali 
 	 * @param value, oggetto da confrontare
@@ -66,10 +66,10 @@ public class Filter<T> {
 		Collection<T> out = new ArrayList<T>();		
 		for(T item:src) {		//ogni elemento della source collection viene analizzato
 			try {
-				Method m = item.getClass().getMethod("get"+fieldName.get(0).substring(0, 1).toUpperCase()+fieldName.get(0).substring(1),null);	
+				Method m = item.getClass().getMethod("get"+fieldName.get(0).substring(0, 1).toUpperCase()+fieldName.get(0).substring(1));	
 				
 				try {
-					Object tmp = m.invoke(item);		//restituisce i valori di ogni campo
+					Object tmp = m.invoke(item);		                    //restituisce i valori di ogni campo
 					if(Filter.check(tmp, operator.get(0), value.get(0)))	//verifica se rispetta il filtro, in caso affermativo viene inserito nella collection
 						out.add(item);
 				} catch (IllegalAccessException e) {
@@ -85,7 +85,9 @@ public class Filter<T> {
 				e.printStackTrace();
 			}					
 		}
+		
 		//Parte ricorsiva: viene lanciato quando logicalLinkOperator non è nulla (uso di OR o AND)
+		
 				if (logicalLinkOperator!=null && logicalLinkOperator.size()>0)	//Quando logicalLinkOperator è nulla viene lasciata la parte ricorsiva
 				{
 					List<String> subLogicalLinkOperator=null;

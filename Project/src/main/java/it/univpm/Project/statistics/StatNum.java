@@ -12,7 +12,7 @@ import it.univpm.Project.dataset.Funding;
 
 public class StatNum extends StatBasic{
 
-	private double arrStat[] = new double[6];
+	private double arrStat[] = new double[6];  //dimensione dell'array che corrisponde al numero delle statistiche possibili
 	
 	/**
 	 * Costruttore della classe StatNum
@@ -28,7 +28,7 @@ public class StatNum extends StatBasic{
 	}
 	
 	/**
-	 * Calcolo somma
+	 * Calcolo della somma
 	 */
 	private double sum () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
@@ -42,7 +42,7 @@ public class StatNum extends StatBasic{
 		}
 	
 	/**
-	 * Calcolo media
+	 * Calcolo della media
 	 */
 	private double avg () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
@@ -57,7 +57,7 @@ public class StatNum extends StatBasic{
 	}
 	
 	/**
-	 * Calcolo minimo
+	 * Calcolo del minimo
 	 */
 	private double min () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
@@ -71,7 +71,7 @@ public class StatNum extends StatBasic{
 	}
 	
 	/**
-	 * Calcolo massimo
+	 * Calcolo del massimo
 	 */
 	private double max () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
@@ -85,7 +85,7 @@ public class StatNum extends StatBasic{
 	}
 	
 	/**
-	 * Calcolo deviazione standard
+	 * Calcolo della deviazione standard
 	 */
 	private double devstd () throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
 	{
@@ -103,7 +103,7 @@ public class StatNum extends StatBasic{
 	}
 
 	/**
-	 * Calcolo numero elementi
+	 * Calcolo del numero elementi
 	 */
 	private long count () 
 	{

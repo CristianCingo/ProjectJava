@@ -2,8 +2,10 @@ package it.univpm.Project.filter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import it.univpm.Project.dataset.Funding;
+import it.univpm.Project.dataset.Metadati;
 import it.univpm.Project.utils.JsonParser;
 
 /**
@@ -16,6 +18,7 @@ public class RepFunding implements RepInterface<Funding>{
 	
 	private static final String filename = "dataFile.json";  
 	private static List<Funding> FundingList = new ArrayList<Funding>();
+	private static List<Metadati> MetadataList = new ArrayList<Metadati>();
 	private static Filter<Funding> filterService = new Filter<Funding>(); 
 	
 	/**
@@ -32,8 +35,6 @@ public class RepFunding implements RepInterface<Funding>{
 			e.printStackTrace();
 		}
 	}
-	
-	//region method not used
 	
 	@Override
 	public void add(Funding item) {
@@ -53,8 +54,6 @@ public class RepFunding implements RepInterface<Funding>{
 	public List<Funding> query(String filter) {
 		return null;
 	}
-	
-	//endregion
 
 	/**
 	 * Restituisce l'intera collection contenente i dati.
@@ -77,5 +76,15 @@ public class RepFunding implements RepInterface<Funding>{
 	
 	public List<Funding> filterField(List<String> fieldName, List<String> operator, List<Object> value,List<String> logicalLinkOperator) {
 		return (List<Funding>) filterService.select(FundingList, fieldName, operator, value,logicalLinkOperator);
+	}
+	
+	/**
+	 * Metodo statico richiamato  per ottenere il tipo di un dato campo.
+	 * @param aliasFilter, campo per il quale se ne vuole ottenere il tipo
+	 * @return
+	 */
+	public static String getTypeOfAlias(String aliasFilter) //return the list of Metadata which has the same field alias of aliasFilter
+	{
+		return MetadataList.stream().filter(data->(data).getAlias().equals(aliasFilter.substring(0,1).toLowerCase()+aliasFilter.substring(1))).collect(Collectors.toList()).get(0).getType();
 	}
 }

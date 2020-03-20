@@ -30,7 +30,12 @@ public StatStr (String param, ArrayList<Funding> af) throws NoSuchMethodExceptio
 	this.occorrenze = new HashMap<>();
 }
 
-
+/**
+ * Calcolo del numero di occorrenze
+ * @throws IllegalAccessException
+ * @throws IllegalArgumentException
+ * @throws InvocationTargetException
+ */
 public void numeroOccorrenze() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException
 {
 int cont = 0;
@@ -48,11 +53,22 @@ else {
 }
 }
 
+/**
+ * Getter dl numero di occorrenze
+ * @return
+ * @throws IllegalAccessException
+ * @throws IllegalArgumentException
+ * @throws InvocationTargetException
+ */
 public Map<String, Integer> getOccorrenze() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException{
 	numeroOccorrenze();
 	return occorrenze;
 }
 
+/**
+ * Setter del numero di occorrenze
+ * @param occorrenze
+ */
 public void setOccorrenze(Map<String, Integer> occorrenze) {
 	this.occorrenze = occorrenze;
 }

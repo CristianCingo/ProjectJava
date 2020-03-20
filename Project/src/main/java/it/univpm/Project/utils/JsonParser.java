@@ -10,8 +10,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 /**
- * Classe utilizzata come servizio per la lettura di un json. Questo viene gestito mediante una lista
- * di vettori di oggetti
+ * Classe utilizzata come servizio per la lettura di un json. Questo viene gestito mediante
+ * una lista di vettori di oggetti
  * @author Cristian Cingolani & Christian Ascani
  */
  
